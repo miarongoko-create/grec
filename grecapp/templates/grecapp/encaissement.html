@@ -1,0 +1,135 @@
+{% extends 'layout/base.html'%}
+{% block title%}Encaissement{% endblock %}
+{% block content %}
+<div>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <div>
+                    <label for="dateE">Date</label>
+                    <input type="date" id="dateE" name="dateE">
+                </div>
+                <div>
+                    <label for="bureau">Bureau</label>
+                    <select id="bureau" name="bureau">
+                        <option>Bureau I</otpion>
+                        <option>Bureau I</otpion>
+                        <option>CIRDOMA</otpion>
+                    </select>        
+                </div>
+                <div>
+                    <label for="refDos">Référence du dossier</label>
+                    <input type="text" id="refDos" name='refDos'>
+                </div>
+                
+            </div>
+            <div>
+                <button id="opOne" name="opOne">Juridique</button>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Opération</th>
+                            <th>Prix unitaire</th>
+                            <th>Nombre</th>
+                            <th>ss_total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </form>
+        <div>
+            <div>
+                <div>
+                    <h3>Requérant</h3>
+                    <div>
+                        <label for="cinR">CIN</label>
+                        <input type="text" id="cinR" name="cinR">
+                    </div>
+                    <div>
+                        <label for="nomR">Nom</label>
+                        <input type="text" id="nomR" name="nomR">
+                    <div>
+                        <label for="prenomR">Prénom</label>
+                        <input type="text" id="prenomR" name="prenomR">
+                    </div>
+                    <div>
+                        <label for="adresseR">Adresse</label>
+                        <input type="text" id="adresseR" name="adresseR">
+                    </div>
+                    <div>
+                        <label for="telR">Téléphone</label>
+                        <input type="text" id="telR" name="telR">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox" style="margin-top: 10%">
+                            <label>
+                                <input name="form-field-checkbox" id="declarant_meme" class="ace ace-checkbox-2" type="checkbox" />
+                                <span> Déclarant même</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Déclarant</h3>
+                <div>
+                    <label for="cinD">CIN</label>
+                    <input type="text" id="cinD" name="cinD">
+                </div>
+                <div>
+                    <label for="nomD">Nom</label>
+                    <input type="text" id="nomD" name="nomD">
+                <div>
+                    <label for="prenomD">Prénom</label>
+                    <input type="text" id="prenomD" name="prenomD">
+                </div>
+                <div>
+                    <label for="adresseD">Adresse</label>
+                    <input type="text" id="adresseD" name="adresseD">
+                </div>
+                <div>
+                    <label for="telD">Téléphone</label>
+                    <input type="text" id="telD" name="telD">
+                </div>
+            </div>
+        </div>
+        <div>
+            <form>
+                <div>
+                    <label></label>
+                    <input id="titre" name="gender">
+                    <span>TITRE</span>
+                    <label></label>
+                    <input id="cadastre" name="gender">
+                    <span>CADASTRE</span>
+                    <label></label>
+                    <input id="requisition" name="gender">
+                    <span>REQUISITION</span>
+                </div>
+            </form>
+        </div>
+        <div>
+            <label>Obsérvations</label>
+            <div>
+                <textarea style="font-weight: bold" type="text"  id="obs_enreg" class="col-xs-12 col-sm-12"></textarea>
+        </div>
+    </div>
+    <div>
+        <a href="{% url 'encaissement' %}">Nouveau</a>
+        <button>Précédent</button>
+        <button>Prochain</button>
+    </div>
+    <div>
+        <div>
+            <div>
+                <h3>Nouveau titre</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
