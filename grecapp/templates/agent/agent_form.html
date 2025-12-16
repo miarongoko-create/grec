@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Formulaire Agent{% endblock %}
+{% block content %}
+<h2>Formulaire Agent</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="{% url 'agent_list' %}">Annuler</a>
+{% endblock %}

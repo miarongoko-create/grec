@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Supprimer Agent{% endblock %}
+{% block content %}
+<h2>Supprimer Agent</h2>
+<p>Voulez-vous vraiment supprimer {{ object.nom }} {{ object.prenom }} ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+</form>
+<a href="{% url 'agent_list' %}">Annuler</a>
+{% endblock %}
+
