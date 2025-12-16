@@ -1,17 +1,12 @@
 from django import forms
-
-class LoginForm(forms.Form):
-    login = forms.CharField(label="Login", max_length=150)
-    mdp = forms.CharField(label="Mot de passe", widget=forms.PasswordInput)
-
-
-    # app/forms.py
-from django import forms
 from .models import (
     TypeAgent, TopoDom, Entite, Agent, Cadastre, Indice,
     Personne, TypeOperation, Operation, AvisPayement, Quittance,
     QuiCadastre, OpQuittance, QuittancePersonne, Titre, QuiTitre
 )
+class LoginForm(forms.Form):
+    login = forms.CharField(label="Login", max_length=150)
+    mdp = forms.CharField(label="Mot de passe", widget=forms.PasswordInput)
 
 class TypeAgentForm(forms.ModelForm):
     class Meta:

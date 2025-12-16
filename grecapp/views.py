@@ -450,27 +450,27 @@ class QuittancePersonneDeleteView(DeleteView):
 # ------------------------------
 class TitreListView(ListView):
     model = Titre
-    template_name = "titre_list.html"
+    template_name = "titre/titre_list.html"
 
 class TitreDetailView(DetailView):
     model = Titre
-    template_name = "titre_detail.html"
+    template_name = "titre/titre_detail.html"
 
 class TitreCreateView(CreateView):
     model = Titre
     form_class = TitreForm
-    template_name = "titre_form.html"
+    template_name = "titre/titre_form.html"
     success_url = reverse_lazy("titre_list")
 
 class TitreUpdateView(UpdateView):
     model = Titre
     form_class = TitreForm
-    template_name = "titre_form.html"
+    template_name = "titre/titre_form.html"
     success_url = reverse_lazy("titre_list")
 
 class TitreDeleteView(DeleteView):
     model = Titre
-    template_name = "titre_confirm_delete.html"
+    template_name = "titre/titre_confirm_delete.html"
     success_url = reverse_lazy("titre_list")
 
 
@@ -479,25 +479,25 @@ class TitreDeleteView(DeleteView):
 # ------------------------------
 class QuiTitreListView(ListView):
     model = QuiTitre
-    template_name = "quititre_list.html"
+    template_name = "quititre/quititre_list.html"
 
 class QuiTitreDetailView(DetailView):
     model = QuiTitre
-    template_name = "quititre_detail.html"
+    template_name = "quititre/quititre_detail.html"
 
 class QuiTitreCreateView(CreateView):
     model = QuiTitre
     form_class = QuiTitreForm
-    template_name = "quititre_form.html"
+    template_name = "quititre/quititre_form.html"
     success_url = reverse_lazy("quititre_list")
 
 class QuiTitreUpdateView(UpdateView):
     model = QuiTitre
     form_class = QuiTitreForm
-    template_name = "quititre_form.html"
+    template_name = "quititre/quititre_form.html"
     success_url = reverse_lazy("quititre_list")
 
 class QuiTitreDeleteView(DeleteView):
     model = QuiTitre
-    template_name = "quititre_confirm_delete.html"
+    template_name = "quititre/quititre_confirm_delete.html"
     success_url = reverse_lazy("quititre_list")

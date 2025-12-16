@@ -1,0 +1,20 @@
+<h2>Liste des Titres</h2>
+<a href="{% url 'titre_create' %}">+ Nouveau</a>
+
+<table border="1">
+    <tr>
+        <th>Libellé</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    {% for t in titres %}
+    <tr>
+        <td>{{ t.libtitre }}</td>
+        <td>{{ t.description }}</td>
+        <td>
+            <a href="{% url 'titre_update' t.idtitre %}">✏️</a>
+            <a href="{% url 'titre_delete' t.idtitre %}">❌</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
